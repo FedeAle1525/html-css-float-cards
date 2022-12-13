@@ -14,6 +14,7 @@
     <div class="container">
 
         <!-- Header con Titolo e Paragrafo -->
+        <!-- Semanticamente è più corretto considerarlo parte della "sezione" nel "main" all'interno di un contenitore. -->
         <header class="header-title">
             <h1>Meet Our Team</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quibusdam asperiores magnam, aspernatur voluptates eveniet porro. Quos, laudantium quae, magnam debitis incidunt odit unde, facere voluptas atque iure vero voluptates.
@@ -23,11 +24,11 @@
         <main>
             <!-- Sezione con Cards di un Team -->
             <section>
-                <div class="main-container clearfix">
+                <div class="main-container">
                     <!-- Riga che contiene le Cards -->
-                    <div class="row">
+                    <!-- Utilizzo una classe a parte per indicare quante colonne stanno in una riga -->
+                    <div class="row row-cols-3 clearfix">
                         <!-- Ogni Card è contenuta in una colonna -->
-
                         <!-- Card di Marco Bianchi -->
                         <div class="col">
                             <!-- Creata classe "card" per gestire lo stile grafico -->
@@ -36,6 +37,7 @@
                                 <div class="card-text">
                                     <h3 class="name">MARCO BIANCHI</h3>
                                     <p class="job">Designer</p>
+                                    <!-- Al posto di "p", si poteva usare "address" -->
                                     <p class="email">marcobianchi@team.com</p>
                                 </div>
                             </div>

@@ -36,15 +36,29 @@ img{
     padding-top: 30px;
 }
 
+
 .col{
     float:left;
-    width: calc(100% / 3 - 20px);
-    margin-right: 20px;
-    margin-bottom: 30px;
+     /* Dal 100% tolgo il margine (marginright) e divido per numero di colonne */
+    /* width: calc((100% - 40px) / 3); */
+     /* width: calc(100% / 3 - 20px); */
+    /* margin-right: 20px; */
+    /* margin-bottom: 30px; */
     box-shadow: 3px 3px 5px grey;
 }
 
-.col:nth-of-type(3n){
+/* Utilizzo una classe a parte per indicare quante colonne stanno in una riga */
+.row-cols-3 > .col{
+     /* Dal 100% tolgo il margine (marginright) e divido per numero di colonne */
+     width: calc((100% - 40px) / 3);
+     /* width: calc(100% / 3 - 20px); */
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+/* NthType prende solo quelli con lo stesso tipo (col) */
+/* Si poteva usare NthChild per prendere i figli indipendentemente dal tipo */
+.row-cols-3 > .col:nth-of-type(3n){
     margin-right: 0;
 }
 
@@ -54,13 +68,22 @@ img{
     height: 100px;
 }
 
+/* Do il float a tutti i figli di card */
+.card > *{
+    float: left;
+}
+
+/* Do una dimensione precisa alla parte "testo" per evitare problemi di visualizzazione */
+/* Tolgo 110px perchè (larghezza immagine - margine) */
 .card-text{
+    width: calc(100% - 110px);
     padding: 15px 0;
 }
 
-.col img{
+/* Dando il float solo all'immagine, viene più difficile affiancare img e testo */
+.card img{
     width: 100px;
-    float: left;
+    /* float: left; */
     margin-right: 10px;
 }
 
